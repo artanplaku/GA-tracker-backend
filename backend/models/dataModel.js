@@ -14,6 +14,9 @@ const dataSchema = new Schema ({
     status:{
         type: String,
     },
+    notes:{
+        type:String,
+    },
     user_id: {
         type: String,
         required: true

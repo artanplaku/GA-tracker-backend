@@ -61,13 +61,13 @@ const mongoose = require('mongoose')
     const { id } = req.params
   
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(400).json({error: 'No such workout'})
+      return res.status(400).json({error: 'No such data'})
     }
   
-    const workout = await Workout.findOneAndDelete({_id: id})
+    const workout = await dataModel.findOneAndDelete({_id: id})
   
     if(!workout) {
-      return res.status(400).json({error: 'No such workout'})
+      return res.status(400).json({error: 'No such data'})
     }
   
     res.status(200).json(workout)
@@ -78,10 +78,10 @@ const mongoose = require('mongoose')
     const { id } = req.params
   
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(400).json({error: 'No such workout'})
+      return res.status(400).json({error: 'No such data'})
     }
   
-    const data = await Workout.findOneAndUpdate({_id: id}, {
+    const data = await dataModel.findOneAndUpdate({_id: id}, {
       ...req.body
     })
   
