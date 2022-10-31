@@ -24,7 +24,7 @@ let mongooseConfig = {
   useUnifiedTopology: true
 }
 
-mongoose.connect("mongodb://0.0.0.0/tracker", mongooseConfig)
+mongoose.connect("mongodb+srv://artan:CxzDsaEwq#21@cluster0.ucdkl9k.mongodb.net/?retryWrites=true&w=majority", mongooseConfig)
 
 
 app.listen(process.env.PORT, () => console.log("Server started on port", process.env.PORT))
